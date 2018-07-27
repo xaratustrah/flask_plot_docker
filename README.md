@@ -13,4 +13,10 @@ You can run this code in several ways. At the top level directory run:
 
     python flask_plot/run.py
 
-or you can install using `pip`. But that is not the whole idea. Better is docker of course.
+or you can install using `pip`. But that is not the whole idea. Starting using `docker-compose`:
+
+    docker-compose up --build -d
+
+alternatively you can use a swarm by using `docker stack deploy` command which can be found in the `deploy.sh` script.
+
+The server is found on [localhost:8001](http://localhost:8001/).
