@@ -1,0 +1,46 @@
+version: "3"
+services:
+  flask_plot:
+    # replace username/repo:tag with your name and image details
+    image: xaratustrah/flask_plot_docker:0.0.1
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+    networks:
+      - my_cool_net
+
+  nginx:
+    image: flask_plot_docker_nginx:0.0.1
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+    ports:
+      - "8001:80"
+
+    networks:
+      - my_cool_net
+
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - my_cool_net
+
+networks:
+  my_cool_net:
