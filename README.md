@@ -1,4 +1,4 @@
-# flask_plot
+# flask_plot_docker
 <img src="https://raw.githubusercontent.com/xaratustrah/flask_plot_docker/master/screenshot.png" width="512">
 
 This is the dockerized version of [this repository](https://github.com/xaratustrah/flask_plot). I have learned a lot and used code snippets from [Patrick Kennedy's blog post](http://www.patricksoftwareblog.com/how-to-use-docker-and-docker-compose-to-create-a-flask-application/) and [Maksym Sladkov' project](https://github.com/sladkovm/docker-flask-gunicorn-nginx/blob/master/docker-compose.yml). Patrick has many other blog posts the topic of `docker`.
